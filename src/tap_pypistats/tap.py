@@ -43,6 +43,7 @@ SCHEMA = {
         "category": {"type": "string"},
         "date": {"type": "string", "format": "date"},
         "downloads": {"type": "integer"},
+        "package": {"type": "string"},
     },
     "required": ["category", "date", "downloads"],
     "additionalProperties": False,
@@ -97,7 +98,10 @@ def iter_packages(
             yield {
                 "type": "RECORD",
                 "stream": "python_minor",
-                "record": record,
+                "record": {
+                    "package": package,
+                    **record,
+                },
                 "time_extracted": now,
             }
 
@@ -113,7 +117,10 @@ def iter_packages(
             yield {
                 "type": "RECORD",
                 "stream": "system",
-                "record": record,
+                "record": {
+                    "package": package,
+                    **record,
+                },
                 "time_extracted": now,
             }
 

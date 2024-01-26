@@ -12,3 +12,5 @@ keywords = [
 ]
 readme = "README.md"
 scripts."tap-pypistats" = "tap_pypistats.tap:main"
+urls.Documentation = "https://github.com/edgarrmondragon/tap-pypistats#readme"
+urls.Homepage = "https://github.com/edgarrmondragon/tap-pypistats"
