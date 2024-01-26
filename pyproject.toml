@@ -1,0 +1,14 @@
+[project]
+name = "tap-pypistats"
+dynamic = ["version"]
+dependencies = [
+  "requests==2.31.0",
+  "requests-cache==1.1.1",
+]
+keywords = [
+  "singer-tap",
+  "pypistats",
+  "meltano",
+]
+readme = "README.md"
+scripts."tap-pypistats" = "tap_pypistats.tap:main"
