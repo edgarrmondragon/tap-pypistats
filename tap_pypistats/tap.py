@@ -104,7 +104,7 @@ def iter_packages(
         "type": "SCHEMA",
         "stream": "python_minor",
         "schema": SCHEMA,
-        "key_properties": ["category", "date"],
+        "key_properties": ["category", "date", "package"],
     }
     for package in packages:
         for record in iter_python_minor(base_url, package):
@@ -122,7 +122,7 @@ def iter_packages(
         "type": "SCHEMA",
         "stream": "system",
         "schema": SCHEMA,
-        "key_properties": ["category", "date"],
+        "key_properties": ["category", "date", "package"],
     }
     for package in packages:
         for record in iter_system(base_url, package):
