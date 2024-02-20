@@ -4,6 +4,20 @@ Singer tap for extracting data from the pypistats API.
 
 See https://pypistats.org/api/.
 
+## Installation
+
+### Using [`pipx`](https://pipx.pypa.io/)
+
+```bash
+pipx install tap-pypistats
+```
+
+### Using `pip`
+
+```bash
+pip install tap-pypistats
+```
+
 ## Usage
 
 ```
@@ -18,10 +32,14 @@ tap-pypistats -c config.json
 | ---- | ---- | ----------- | ------- |
 | packages | array | List of packages to get stats for | `[]` |
 
-### Example
+### Config example
 
 ```json
 {
   "packages": ["requests"]
 }
 ```
+
+## Acknowledgements
+
+* [Christopher Flynn](https://flynn.gg/), for creating [pypistats.org](https://pypistats.org).
