@@ -36,7 +36,6 @@ source = "vcs"
 [tool.ruff]
 line-length = 100
 preview = true
-target-version = "py38"
 
 [tool.ruff.lint]
 select = [
