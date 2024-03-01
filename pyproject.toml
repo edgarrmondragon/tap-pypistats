@@ -24,7 +24,7 @@ dependencies = [
 ]
 optional-dependencies.tests = [
   "pytest==8.0.1",
-  "pytest-httpserver==1.0.9",
+  "pytest-httpserver==1.0.10",
 ]
 urls.Documentation = "https://github.com/edgarrmondragon/tap-pypistats#readme"
 urls.Homepage = "https://github.com/edgarrmondragon/tap-pypistats"
