@@ -19,7 +19,7 @@ dynamic = [
   "version",
 ]
 dependencies = [
-  "requests==2.31",
+  "requests==2.32.0",
   "requests-cache==1.2.0",
 ]
 optional-dependencies.tests = [
