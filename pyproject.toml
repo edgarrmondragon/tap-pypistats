@@ -28,7 +28,7 @@ dynamic = [
 ]
 dependencies = [
   "requests==2.32.3",
-  "requests-cache==1.2",
+  "requests-cache==1.2.1",
 ]
 optional-dependencies.tests = [
   "pytest==8.2.1",
