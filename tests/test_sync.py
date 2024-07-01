@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import io
 import typing as t
 
 from tap_pypistats.tap import iter_packages
@@ -102,13 +101,14 @@ def test_iter_packages(httpserver: HTTPServer):
     base_url = httpserver.url_for("").strip("/")
 
     (
-        httpserver
-        .expect_oneshot_request(f"/packages/{package_name}/system")
-        .respond_with_data(EXAMPLE_SYSTEM_RESPONSE, headers={"Content-Type": "application/json"})
+        httpserver.expect_oneshot_request(f"/packages/{package_name}/system").respond_with_data(
+            EXAMPLE_SYSTEM_RESPONSE, headers={"Content-Type": "application/json"}
+        )
     )
     (
-        httpserver.expect_oneshot_request(f"/packages/{package_name}/python_minor")
-        .respond_with_data(
+        httpserver.expect_oneshot_request(
+            f"/packages/{package_name}/python_minor"
+        ).respond_with_data(
             EXAMPLE_PYTHON_MINOR_RESPONSE,
             headers={"Content-Type": "application/json"},
         )
