@@ -32,7 +32,7 @@ dependencies = [
   "requests-cache==1.2.1",
 ]
 optional-dependencies.tests = [
-  "pytest==8.2.2",
+  "pytest==8.3.2",
   "pytest-httpserver==1.0.12",
 ]
 urls.Documentation = "https://github.com/edgarrmondragon/tap-pypistats#readme"
