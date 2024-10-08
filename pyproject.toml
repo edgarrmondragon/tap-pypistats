@@ -8,6 +8,7 @@ requires = [
 [project]
 name = "tap-pypistats"
 readme = "README.md"
+description = "Singer tap for pypistats.org"
 keywords = [
   "meltano",
   "pypistats",
