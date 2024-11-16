@@ -16,6 +16,7 @@ keywords = [
   "singer-tap",
 ]
 license.file = "LICENSE"
+requires-python = ">=3.9"
 classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.9",
@@ -33,12 +34,19 @@ dependencies = [
   "requests-cache==1.2.1",
 ]
 optional-dependencies.tests = [
-  "pytest==8.3.3",
-  "pytest-httpserver==1.1",
 ]
 urls.Documentation = "https://github.com/edgarrmondragon/tap-pypistats#readme"
 urls.Homepage = "https://github.com/edgarrmondragon/tap-pypistats"
 scripts."tap-pypistats" = "tap_pypistats.tap:main"
+
+[dependency-groups]
+dev = [
+  { include-group = "tests" },
+]
+tests = [
+  "pytest==8.3.3",
+  "pytest-httpserver==1.1",
+]
 
 [tool.hatch.version]
 source = "vcs"
@@ -70,3 +78,6 @@ lint.per-file-ignores."tests/*" = [
 
 [tool.pyproject-fmt]
 max_supported_python = "3.14"
+
+[tool.uv]
+prerelease = "allow"

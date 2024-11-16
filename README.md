@@ -12,10 +12,10 @@ See https://pypistats.org/api/.
 pipx install tap-pypistats
 ```
 
-### Using `pip`
+### Using [`uv`](https://docs.astral.sh/uv/getting-started/installation/)
 
 ```bash
-pip install tap-pypistats
+uv tool install tap-pypistats
 ```
 
 ## Usage
