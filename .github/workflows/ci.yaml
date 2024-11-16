@@ -16,6 +16,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
+env:
+  FORCE_COLOR: "1"
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -29,12 +32,15 @@ jobs:
           - "3.13"
           - "3.14"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+        id: setup-python
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: true
-      - run: pip install tox
+      - uses: astral-sh/setup-uv@e779db74266a80753577425b0f4ee823649f251d # v3.2.3
+        with:
+          version: ">=0.5"
+      - run: uvx --with=tox-uv tox -e ${{ matrix.python-version }}
         env:
-          PIP_CONSTRAINT: .github/workflows/constraints.txt
-      - run: python -Im tox -e $(echo py${{ matrix.python-version }} | tr -d .)
+          UV_PYTHON: ${{ steps.setup-python.outputs.python-path }}
