@@ -12,6 +12,7 @@ import sys
 import typing as t
 
 import requests
+import requests.adapters
 import requests_cache
 
 BASE_URL = "https://pypistats.org/api"
@@ -70,20 +71,26 @@ def write_message(message: dict[str, t.Any], *, stream: t.IO[str] = sys.stdout) 
 
 
 def iter_python_minor(
-    base_url: str, package_name: str
+    session: requests.Session,
+    base_url: str,
+    package_name: str,
 ) -> t.Generator[dict[str, t.Any], None, None]:
     """Iterate over the data for a package."""
     url = f"{base_url}/packages/{package_name}/python_minor"
-    response = requests.get(url, timeout=60)
+    response = session.get(url, timeout=60)
     response.raise_for_status()
     data = response.json()
     yield from data["data"]
 
 
-def iter_system(base_url: str, package_name: str) -> t.Generator[dict[str, t.Any], None, None]:
+def iter_system(
+    session: requests.Session,
+    base_url: str,
+    package_name: str,
+) -> t.Generator[dict[str, t.Any], None, None]:
     """Iterate over the data for a package."""
     url = f"{base_url}/packages/{package_name}/system"
-    response = requests.get(url, timeout=60)
+    response = session.get(url, timeout=60)
     response.raise_for_status()
     data = response.json()
     yield from data["data"]
@@ -99,6 +106,8 @@ def iter_packages(
     :rtype: Iterator[dict]
     """
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    session = requests.Session()
+    session.mount("https://", requests.adapters.HTTPAdapter(max_retries=5))
 
     yield {
         "type": "SCHEMA",
@@ -107,7 +116,7 @@ def iter_packages(
         "key_properties": ["category", "date", "package"],
     }
     for package in packages:
-        for record in iter_python_minor(base_url, package):
+        for record in iter_python_minor(session, base_url, package):
             yield {
                 "type": "RECORD",
                 "stream": "python_minor",
@@ -125,7 +134,7 @@ def iter_packages(
         "key_properties": ["category", "date", "package"],
     }
     for package in packages:
-        for record in iter_system(base_url, package):
+        for record in iter_system(session, base_url, package):
             yield {
                 "type": "RECORD",
                 "stream": "system",
