@@ -74,7 +74,7 @@ def iter_python_minor(
 ) -> t.Generator[dict[str, t.Any], None, None]:
     """Iterate over the data for a package."""
     url = f"{base_url}/packages/{package_name}/python_minor"
-    response = requests.get(url, timeout=5)
+    response = requests.get(url, timeout=60)
     response.raise_for_status()
     data = response.json()
     yield from data["data"]
@@ -83,7 +83,7 @@ def iter_python_minor(
 def iter_system(base_url: str, package_name: str) -> t.Generator[dict[str, t.Any], None, None]:
     """Iterate over the data for a package."""
     url = f"{base_url}/packages/{package_name}/system"
-    response = requests.get(url, timeout=5)
+    response = requests.get(url, timeout=60)
     response.raise_for_status()
     data = response.json()
     yield from data["data"]

@@ -1,0 +1,22 @@
+version: 1
+default_environment: dev
+project_id: 452fa3bb-fedb-42c2-a26e-e3780098b4ef
+environments:
+- name: dev
+- name: staging
+- name: prod
+send_anonymous_usage_stats: false
+plugins:
+  extractors:
+  - name: tap-pypistats
+    namespace: tap_pypistats
+    pip_url: -e .
+    executable: tap-pypistats
+    capabilities: []
+    settings:
+    - name: packages
+      kind: array
+    config:
+      packages:
+      - citric
+      - meltano

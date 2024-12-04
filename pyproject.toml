@@ -81,3 +81,4 @@ max_supported_python = "3.14"
 
 [tool.uv]
 prerelease = "allow"
+preview = true
