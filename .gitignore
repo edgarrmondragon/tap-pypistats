@@ -1,3 +1,6 @@
+# Meltano
+.meltano
+
 # Data files
 *.json
 *.jsonl
