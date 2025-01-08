@@ -313,7 +313,7 @@ wheels = [
 
 [[package]]
 name = "tap-pypistats"
-version = "0.0.7.dev0+gc376c8e.d20250106"
+version = "0.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "requests" },
