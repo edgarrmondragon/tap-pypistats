@@ -29,8 +29,8 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
 ]
 dynamic = [
-  "version",
   "optional-dependencies",
+  "version",
 ]
 dependencies = [
   "requests==2.32.3",
