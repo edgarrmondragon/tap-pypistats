@@ -313,11 +313,27 @@ wheels = [
 
 [[package]]
 name = "tap-pypistats"
-version = "0.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "requests" },
     { name = "requests-cache" },
+]
+
+[package.optional-dependencies]
+pinned = [
+    { name = "attrs" },
+    { name = "cattrs" },
+    { name = "certifi" },
+    { name = "charset-normalizer" },
+    { name = "exceptiongroup", marker = "python_full_version < '3.11'" },
+    { name = "idna" },
+    { name = "platformdirs" },
+    { name = "requests" },
+    { name = "requests-cache" },
+    { name = "six" },
+    { name = "typing-extensions", marker = "python_full_version < '3.11'" },
+    { name = "url-normalize" },
+    { name = "urllib3" },
 ]
 
 [package.dev-dependencies]
@@ -332,8 +348,21 @@ tests = [
 
 [package.metadata]
 requires-dist = [
+    { name = "attrs", marker = "extra == 'pinned'", specifier = "==24.3.0" },
+    { name = "cattrs", marker = "extra == 'pinned'", specifier = "==24.1.2" },
+    { name = "certifi", marker = "extra == 'pinned'", specifier = "==2024.12.14" },
+    { name = "charset-normalizer", marker = "extra == 'pinned'", specifier = "==3.4.1" },
+    { name = "exceptiongroup", marker = "python_full_version < '3.11' and extra == 'pinned'", specifier = "==1.2.2" },
+    { name = "idna", marker = "extra == 'pinned'", specifier = "==3.10" },
+    { name = "platformdirs", marker = "extra == 'pinned'", specifier = "==4.3.6" },
     { name = "requests", specifier = "==2.32.3" },
+    { name = "requests", marker = "extra == 'pinned'", specifier = "==2.32.3" },
     { name = "requests-cache", specifier = "==1.2.1" },
+    { name = "requests-cache", marker = "extra == 'pinned'", specifier = "==1.2.1" },
+    { name = "six", marker = "extra == 'pinned'", specifier = "==1.17.0" },
+    { name = "typing-extensions", marker = "python_full_version < '3.11' and extra == 'pinned'", specifier = "==4.12.2" },
+    { name = "url-normalize", marker = "extra == 'pinned'", specifier = "==1.4.3" },
+    { name = "urllib3", marker = "extra == 'pinned'", specifier = "==2.3.0" },
 ]
 
 [package.metadata.requires-dev]

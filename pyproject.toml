@@ -30,12 +30,11 @@ classifiers = [
 ]
 dynamic = [
   "version",
+  "optional-dependencies",
 ]
 dependencies = [
   "requests==2.32.3",
   "requests-cache==1.2.1",
-]
-optional-dependencies.tests = [
 ]
 urls.Documentation = "https://github.com/edgarrmondragon/tap-pypistats#readme"
 urls.Homepage = "https://github.com/edgarrmondragon/tap-pypistats"
@@ -87,3 +86,4 @@ max_supported_python = "3.14"
 [tool.uv]
 prerelease = "allow"
 preview = true
+required-version = ">=0.5.19"
