@@ -3,7 +3,7 @@ py := '3.13'
 update: lock-upgrade pre-commit-autoupdate gha build test
 
 lock-upgrade:
-    SETUPTOOLS_SCM_PRETEND_VERSION=0.0.0 uv lock --upgrade
+    uv lock --upgrade
 
 pre-commit-autoupdate:
     uvx --python={{py}} --with pre-commit-uv pre-commit autoupdate
