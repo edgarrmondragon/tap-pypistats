@@ -18,6 +18,10 @@ pipx install tap-pypistats
 uv tool install tap-pypistats
 ```
 
+#### Pinned dependencies
+
+Install `tap-pypistats[pinned]` to get a more stable dependency tree.
+
 ## Usage
 
 ```
