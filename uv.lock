@@ -1,4 +1,5 @@
 version = 1
+revision = 1
 requires-python = ">=3.9"
 
 [options]
@@ -364,6 +365,7 @@ requires-dist = [
     { name = "url-normalize", marker = "extra == 'pinned'", specifier = "==1.4.3" },
     { name = "urllib3", marker = "extra == 'pinned'", specifier = "==2.3.0" },
 ]
+provides-extras = ["pinned"]
 
 [package.metadata.requires-dev]
 dev = [
