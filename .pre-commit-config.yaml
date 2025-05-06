@@ -25,3 +25,13 @@ repos:
     hooks:
       - id: uv-lock
       - id: uv-sync
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.33.0
+    hooks:
+      - id: check-github-workflows
+      - id: check-meltano
+      - id: check-renovate
+        language: python
+        additional_dependencies:
+        - pyjson5==1.6.8
