@@ -45,7 +45,7 @@ dev = [
   { include-group = "tests" },
 ]
 tests = [
-  "pytest==8.3.3",
+  "pytest==8.3.5",
   "pytest-httpserver==1.1",
 ]
 
