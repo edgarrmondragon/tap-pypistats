@@ -183,6 +183,8 @@ def sync_packages(
 def main() -> None:
     """Run the main program."""
     parser = argparse.ArgumentParser()
+    parser.suggest_on_error = True
+    parser.color = True
     parser.add_argument(
         "-c",
         "--config",
