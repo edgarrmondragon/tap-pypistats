@@ -17,9 +17,9 @@ keywords = [
   "singer-tap",
 ]
 license = "Apache-2.0"
+license-files = [ "LICENSE" ]
 requires-python = ">=3.9"
 classifiers = [
-  "License :: OSI Approved :: Apache Software License",
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
