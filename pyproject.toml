@@ -33,7 +33,7 @@ dynamic = [
   "version",
 ]
 dependencies = [
-  "requests==2.32.3",
+  "requests==2.32.4",
   "requests-cache==1.2.1",
 ]
 urls.Documentation = "https://github.com/edgarrmondragon/tap-pypistats#readme"
