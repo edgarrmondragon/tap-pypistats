@@ -33,8 +33,8 @@ dynamic = [
   "version",
 ]
 dependencies = [
-  "requests==2.32.4",
-  "requests-cache==1.2.1",
+  "requests~=2.32",
+  "requests-cache~=1.2",
 ]
 urls.Documentation = "https://github.com/edgarrmondragon/tap-pypistats#readme"
 urls.Homepage = "https://github.com/edgarrmondragon/tap-pypistats"
@@ -45,8 +45,8 @@ dev = [
   { include-group = "tests" },
 ]
 tests = [
-  "pytest==8.4",
-  "pytest-httpserver==1.1.3",
+  "pytest>=8.4",
+  "pytest-httpserver>=1.1",
 ]
 
 [tool.hatch.version]
@@ -82,6 +82,24 @@ lint.per-file-ignores."tests/*" = [
 
 [tool.pyproject-fmt]
 max_supported_python = "3.14"
+
+[tool.tox]
+requires = [ "tox", "tox-uv" ]
+env_list = [
+  "3.14",
+  "3.13",
+  "3.12",
+  "3.11",
+  "3.10",
+  "3.9",
+]
+
+[tool.tox.env_run_base]
+description = "run unit tests"
+runner = "uv-venv-lock-runner"
+pass_env = [ "TAP_PYPISTATS_*" ]
+dependency_groups = [ "tests" ]
+commands = [ [ "pytest", { replace = "posargs", default = [ "tests" ], extend = true } ] ]
 
 [tool.uv]
 prerelease = "allow"
