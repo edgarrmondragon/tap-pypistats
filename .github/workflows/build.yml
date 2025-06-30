@@ -20,7 +20,7 @@ jobs:
     needs: build
     environment:
       name: pypi
-      url: https://pypi.org/p/tap-pypistats/
+      url: https://pypi.org/p/${{ needs.build.outputs.package_name }}/${{ needs.build.outputs.package_version }}
     permissions:
       contents: write
       id-token: write
