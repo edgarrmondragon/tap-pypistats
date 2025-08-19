@@ -5,7 +5,6 @@ from __future__ import annotations
 import argparse
 import dataclasses
 import datetime
-import functools
 import importlib.metadata
 import json
 import logging
@@ -183,16 +182,7 @@ def sync_packages(
 
 def main() -> None:
     """Run the main program."""
-    ArgumentParser = functools.partial(argparse.ArgumentParser)
-
-    if sys.version_info >= (3, 14):
-        ArgumentParser = functools.partial(
-            ArgumentParser,
-            color=True,
-            suggest_on_error=True,
-        )
-
-    parser = ArgumentParser(allow_abbrev=False)
+    parser = argparse.ArgumentParser(allow_abbrev=False)
     parser.add_argument(
         "-c",
         "--config",
