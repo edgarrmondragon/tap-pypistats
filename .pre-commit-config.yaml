@@ -21,13 +21,13 @@ repos:
       - id: pyproject-fmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.8.6
+    rev: 0.8.12
     hooks:
       - id: uv-lock
       - id: uv-sync
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.33.2
+    rev: 0.33.3
     hooks:
       - id: check-github-workflows
       - id: check-meltano
