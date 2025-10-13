@@ -54,6 +54,11 @@ source = "vcs"
 [tool.hatch.metadata.hooks.pinned_extra]
 name = "pinned"
 
+[tool.uv]
+prerelease = "allow"
+preview = true
+required-version = ">=0.6"
+
 [tool.ruff]
 line-length = 100
 preview = true
@@ -98,8 +103,3 @@ runner = "uv-venv-lock-runner"
 pass_env = [ "TAP_PYPISTATS_*" ]
 dependency_groups = [ "tests" ]
 commands = [ [ "pytest", { replace = "posargs", default = [ "tests" ], extend = true } ] ]
-
-[tool.uv]
-prerelease = "allow"
-preview = true
-required-version = ">=0.6"
