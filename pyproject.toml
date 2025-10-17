@@ -26,6 +26,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
 ]
 dynamic = [
   "optional-dependencies",
@@ -85,11 +86,12 @@ lint.per-file-ignores."tests/*" = [
 ]
 
 [tool.pyproject-fmt]
-max_supported_python = "3.14"
+max_supported_python = "3.15"
 
 [tool.tox]
 requires = [ "tox", "tox-uv" ]
 env_list = [
+  "3.15",
   "3.14",
   "3.13",
   "3.12",
