@@ -1,7 +1,7 @@
 [build-system]
 build-backend = "hatchling.build"
 requires = [
-  "hatch-pinned-extra",
+  "hatch-pinned-extra @ git+https://github.com/edgarrmondragon/hatch-pinned-extra.git@main",
   "hatch-vcs",
   "hatchling",
 ]
